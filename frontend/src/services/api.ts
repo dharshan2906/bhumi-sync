@@ -1,4 +1,5 @@
-const API_BASE = "http://127.0.0.1:8000/api";
+const BACKEND_URL = import.meta.env.VITE_API_URL || "https://bhumi-sync-backend.onrender.com";
+const API_BASE = `${BACKEND_URL.replace(/\/$/, "")}/api`;
 
 export interface DashboardStats {
   total_parcels: number;
