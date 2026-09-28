@@ -16,7 +16,7 @@ import { DemoModal } from './components/DemoModal';
 import { PresentationModeModal } from './components/PresentationModeModal';
 import { LandingPage } from './components/LandingPage';
 import { LoginPage } from './components/LoginPage';
-import { api, DashboardStats, DatasetItem, ParcelDigitalTwin } from './services/api';
+import { api, DashboardStats, DatasetItem, ParcelDigitalTwin, DEFAULT_STATS } from './services/api';
 
 export const App: React.FC = () => {
   const [viewMode, setViewMode] = useState<'landing' | 'login' | 'app'>('app');
@@ -28,7 +28,7 @@ export const App: React.FC = () => {
   });
 
   const [activeTab, setActiveTab] = useState<string>('dashboard');
-  const [stats, setStats] = useState<DashboardStats | null>(null);
+  const [stats, setStats] = useState<DashboardStats>(DEFAULT_STATS);
   const [datasets, setDatasets] = useState<DatasetItem[]>([]);
   const [selectedWard, setSelectedWard] = useState<string>('ALL');
   const [searchQuery, setSearchQuery] = useState<string>('');

@@ -41,6 +41,44 @@ export interface DashboardStats {
   };
 }
 
+export const DEFAULT_STATS: DashboardStats = {
+  total_parcels: 236,
+  verified_parcels: 144,
+  pending_verification: 50,
+  under_review_parcels: 42,
+  rejected_parcels: 0,
+  boundary_conflicts: 22,
+  area_mismatches: 22,
+  duplicate_records: 0,
+  land_use_changes: 15,
+  buildings_detected: 225,
+  encroachments_detected: 11,
+  data_sources_integrated: 4,
+  average_confidence_pct: 94.8,
+  ward_breakdown: [
+    { ward: "Ward 12 - Indira Nagar", total_parcels: 96, verified: 59, pending: 37, conflicts: 29 },
+    { ward: "Ward 14 - Shivaji Nagar", total_parcels: 70, verified: 43, pending: 27, conflicts: 22 },
+    { ward: "Ward 17 - Cyber Tech Zone", total_parcels: 70, verified: 42, pending: 28, conflicts: 19 }
+  ],
+  conflict_distribution: [
+    { type: "Area Mismatch", count: 22, code: "AREA_MISMATCH" },
+    { type: "Boundary Mismatch", count: 22, code: "BOUNDARY_MISMATCH" },
+    { type: "Building Outside Parcel", count: 11, code: "BUILDING_OUTSIDE_PARCEL" },
+    { type: "Land Use Inconsistency", count: 15, code: "LAND_USE_INCONSISTENCY" }
+  ],
+  source_contributions: [
+    { name: "Cadastral Revenue Survey Map (2018)", type: "Cadastral Map", records: 236, agency: "Department of Revenue & Land Records", status: "HARMONIZED" },
+    { name: "Municipal GIS Property Master Layer", type: "Municipal GIS", records: 236, agency: "Municipal Corporation GIS Cell", status: "HARMONIZED" },
+    { name: "Property Tax Assessment Ledger (2025)", type: "Property Tax", records: 236, agency: "Urban Development & Municipal Taxation Authority", status: "HARMONIZED" },
+    { name: "High-Res Optical Drone & Satellite Orthophoto", type: "Satellite / Drone AI", records: 185, agency: "National Remote Sensing Centre (NRSC)", status: "HARMONIZED" }
+  ],
+  confidence_tiers: {
+    high_90_plus: 207,
+    medium_75_89: 29,
+    low_below_75: 0
+  }
+};
+
 export interface DatasetItem {
   id: number;
   name: string;
