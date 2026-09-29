@@ -26,8 +26,10 @@ app = FastAPI(
 # Enable CORS for React Frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
+    allow_origins=[
+        "https://bhumi-sync-812a.onrender.com"
+    ],
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
